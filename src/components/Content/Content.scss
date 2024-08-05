@@ -1,0 +1,55 @@
+
+.cart__border {
+    border: 1px solid #e0e0e0; /* Светло-серая рамка */
+    border-radius: 20px; /* Закругленные углы */
+    max-width: 600px; /* Максимальная ширина */
+    margin: auto; /* Центрирование контейнера */
+    padding: 16px; /* Внутренние отступы */
+    background-color: #fff; /* Белый фон */
+    margin-bottom: 20px;
+  }
+  
+  .user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px; /* Отступ снизу */
+    border-bottom: 1px solid #e0e0e0; /* Нижняя граница */
+  }
+  
+  .user p {
+    color: #757575; /* Серый цвет текста для даты */
+    margin: 0; /* Убираем отступы */
+  }
+
+  .draw{
+    display: flex;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    margin-inline: 10px;
+    cursor: pointer;
+  }
+  
+  .image {
+    width: 100%;
+    height: auto;
+    margin: 16px 0; 
+    background-color: #f0f0f0; 
+    border-radius: 10px;
+  }
+
+  .icon__img{
+    width: 24px;
+    height: 24px;
+    margin-inline: 30px;
+    cursor: pointer;
+  }
+  
+  .engagement-section {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 16px; /* Отступ сверху */
+    border-top: 1px solid #e0e0e0; /* Верхняя граница */
+  }
+  
