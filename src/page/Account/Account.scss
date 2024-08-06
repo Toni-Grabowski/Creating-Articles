@@ -1,7 +1,6 @@
 .account__user {
     display: flex;
     margin-top: 50px;
-    
 }
 
 .main__content-account {
@@ -9,16 +8,15 @@
     margin-left: -100px;
     padding-inline: 50px;
 }
+
 .profile__user {
     width: 850px;
     display: flex;
     align-items: center;
-    // background-color: #b4afaf;
-   
     border-radius: 20px;
 }
 
-.profile__user-content{
+.profile__user-content {
     width: 100%;
     display: flex;
     align-items: center;
@@ -26,12 +24,13 @@
     margin-top: 40px;
 }
 
-.name{
+.name {
     display: flex;
     font-size: 30px;
     font-weight: 800;
     margin-left: 30px;
 }
+
 .name p {
     margin-right: 10px;
 }
@@ -42,22 +41,78 @@
     border-radius: 100%;
 }
 
-.button__settings{
-    padding: 7px 20px 7px 20px;
+.button__settings {
+    padding: 7px 20px;
     font-size: 16px;
     border-radius: 10px;
     border: 1px solid #000000;
+    background-color: #ffffff;
+    color: #000000;
     cursor: pointer;
-
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.button__settings:hover {
+    border-color: #3498db;
+    color: #3498db;
+    transform: scale(1.05);
+}
 
-.main__account{
+.button__settings:active {
+    border-color: #2980b9;
+    color: #2980b9;
+    transform: scale(0.95);
+}
+
+.main__account {
     max-width: 600px;
-    // background-color: rgb(236, 236, 236);
     margin-top: 20px;
     padding-inline: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
-    border-radius:  20px;
+    border-radius: 20px;
+}
+
+.addArticles {
+    width: 50px;
+    height: 50px;
+    margin-left: 70px;
+    border-radius: 50%;
+    border: none;
+    background-color: #2980b9;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.addArticles:hover {
+    background-color: #0097fc;
+    transform: scale(1.1);
+    animation: pulse 1s infinite;
+}
+
+.addArticles:active {
+    background-color: #1c6ea4;
+    transform: scale(0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
 }

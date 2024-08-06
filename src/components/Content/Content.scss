@@ -1,55 +1,86 @@
-
 .cart__border {
-    border: 1px solid #e0e0e0; /* Светло-серая рамка */
-    border-radius: 20px; /* Закругленные углы */
-    max-width: 600px; /* Максимальная ширина */
-    margin: auto; /* Центрирование контейнера */
-    padding: 16px; /* Внутренние отступы */
-    background-color: #fff; /* Белый фон */
-    margin-bottom: 20px;
-  }
-  
-  .user {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 16px; /* Отступ снизу */
-    border-bottom: 1px solid #e0e0e0; /* Нижняя граница */
-  }
-  
-  .user p {
-    color: #757575; /* Серый цвет текста для даты */
-    margin: 0; /* Убираем отступы */
-  }
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  max-width: 600px;
+  margin: auto;
+  padding: 16px;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
 
-  .draw{
-    display: flex;
-    align-items: center;
-    width: 20px;
-    height: 20px;
-    margin-inline: 10px;
-    cursor: pointer;
-  }
-  
-  .image {
-    width: 100%;
-    height: auto;
-    margin: 16px 0; 
-    background-color: #f0f0f0; 
-    border-radius: 10px;
-  }
+.user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e0e0e0;
+}
 
-  .icon__img{
-    width: 24px;
-    height: 24px;
-    margin-inline: 30px;
-    cursor: pointer;
-  }
-  
-  .engagement-section {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 16px; /* Отступ сверху */
-    border-top: 1px solid #e0e0e0; /* Верхняя граница */
-  }
-  
+.user__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user p {
+  color: #757575;
+  margin: 0;
+}
+
+.draw {
+  display: flex;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  margin-inline: 10px;
+  cursor: pointer;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  margin: 16px 0;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+}
+
+.icon__img {
+  width: 24px;
+  height: 24px;
+  margin-inline: 30px;
+  cursor: pointer;
+}
+
+.engagement-section {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.avatar {
+  background-color: #757575;
+  width: 45px;
+  height: 45px;
+  margin-right: 10px;
+  border-radius: 100%;
+}
+
+.heading {
+  font-family: 'Arial', sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.body {
+  font-family: 'Georgia', serif;
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  text-align: justify;
+  margin-inline: 30px;
+  text-align: center;
+}

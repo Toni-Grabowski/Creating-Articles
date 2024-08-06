@@ -8,10 +8,7 @@ const Home = () => {
         <Header/>
         <div className="main-content">
           <h1>Добро пожаловать!</h1>
-
-            
             <Content />
-
          </div>
     </div>
   )
