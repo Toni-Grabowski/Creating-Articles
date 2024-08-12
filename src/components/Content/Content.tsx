@@ -4,13 +4,18 @@ import './Content.scss'
 
 interface Post {
     id: string,
+    userId: string,
     heading: string,
     body: string,
-    image: string
+    image: string,
+    lastName: string,
+    userName: string,
+    avatar: string
 }
 
 const Content = () => {
-    const [post, setPost] = useState<Post[]>([])
+    const [post, setPost] = useState<Post[]>([]);
+    let localId = localStorage.getItem("id")
     useEffect(() => {
         fetch(`https://66b0d84f6a693a95b53a6d04.mockapi.io/Articles/post`, {
             method:'GET'
@@ -32,15 +37,21 @@ const Content = () => {
         <div className="cart__border" key={data.id}>
             <div className="user">
                 <div className='user__info'>
-                    <div className='avatar'></div>
+                  <img className='avatar' src={data.avatar} alt="" />
 
                     <div>
-                        имя пользователя
+                        <div className="user__nameLast">
+                            <p className='user-name'>{data.userName}</p>
+                            <p>{data.lastName}</p>
+                        </div>
+
+
                         <p>дата создания поста</p>   
                     </div>
                 </div>
+
                 <div>
-                    <img className='draw' src="./draw.png" alt="" />    
+                 {data.userId === localId  ?  <img className='draw' src="./draw.png" alt="" /> : null}
                 </div>
                 
             </div>

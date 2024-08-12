@@ -27,6 +27,13 @@
   margin: 0;
 }
 
+.user__nameLast{
+  display: flex;
+  .user-name{
+    padding-right: 10px;
+  }
+}
+
 .draw {
   display: flex;
   align-items: center;

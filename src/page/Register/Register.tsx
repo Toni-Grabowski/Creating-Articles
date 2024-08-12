@@ -36,6 +36,9 @@ const Register = () => {
         .then((data) => {
             localStorage.setItem('id', data.id)
             localStorage.setItem('flag', 'true')
+            localStorage.setItem("name", data.name)
+            localStorage.setItem("last_name", data.last_name)
+            localStorage.setItem("avatar", data.avatar)
             navigate('/')
         })
     }
@@ -55,13 +58,15 @@ const Register = () => {
         })
         .then((response) => response.json())
         .then((data) => {
-            const result = data.find((user) => 
+            const result = data.find((user:{email: string, password: string}) => 
                 user.email === inputValueAuto.email && user.password === inputValueAuto.password
             );
 
             if(result) {
                 localStorage.setItem('id', result.id)
                 localStorage.setItem('flag', 'true')
+                localStorage.setItem("name", data.name)
+                localStorage.setItem("last_name", data.last_name)
                 navigate('/')
             }else {
                 return;

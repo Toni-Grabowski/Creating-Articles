@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import './Modal.scss'
 
 interface ModalProps {
@@ -6,13 +6,24 @@ interface ModalProps {
     setIsModal: (value: boolean) => void;
 }
 
-const Modal: React.FC<ModalProps> = ({ isModal, setIsModal }) => {
 
+  
+
+const Modal: React.FC<ModalProps> = ({ isModal, setIsModal }) => {
+    let localId = localStorage.getItem("id")
+    let localName = localStorage.getItem('name')
+    let localLastName = localStorage.getItem('last_name')
+    let avatar = localStorage.getItem('avatar')
     const [modalInputValue, setModalInputValue] = useState({
         heading: '',
         body: '', 
-        image: ''
+        image: '',
+        userId: localId,
+        userName: localName,
+        lastName: localLastName,
+        avatar: avatar,
     });
+   
 
     const FormModalInput = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value, files } = e.target;
@@ -26,6 +37,10 @@ const Modal: React.FC<ModalProps> = ({ isModal, setIsModal }) => {
             setModalInputValue({ ...modalInputValue, [name]: value });
         }
     };
+
+   
+
+
 
     const submitFormModal = async () => {
         const response = await fetch(`https://66b0d84f6a693a95b53a6d04.mockapi.io/Articles/post`, {
@@ -44,6 +59,11 @@ const Modal: React.FC<ModalProps> = ({ isModal, setIsModal }) => {
             console.error('Error:', response.statusText);
         }
        
+
+
+
+
+
 
         setIsModal(false);
     };
