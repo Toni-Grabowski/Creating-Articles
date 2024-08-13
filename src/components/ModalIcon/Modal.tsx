@@ -51,20 +51,28 @@ const Modal: React.FC<ModalProps> = ({ isModal, setIsModal }) => {
             },
             body: JSON.stringify(modalInputValue)
         });
+    
+        if(response.ok) {
+            let post = await response.json()
+            let user = await fetch(`https://66b0d84f6a693a95b53a6d04.mockapi.io/Articles/user/${localId}`)
 
-        if (response.ok) {
-            const data = await response.json();
-            console.log(data)
-        } else {
-            console.error('Error:', response.statusText);
+            if(user.ok){
+                let userRespons = await user.json()
+                let newPost = [...userRespons.postsCreate, post] 
+
+                let updatePost = await fetch(`https://66b0d84f6a693a95b53a6d04.mockapi.io/Articles/user/${localId}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({...userRespons, postsCreate: newPost})
+                })
+            }
+          
+
         }
-       
-
-
-
-
-
-
+    
         setIsModal(false);
     };
 
@@ -83,6 +91,7 @@ const Modal: React.FC<ModalProps> = ({ isModal, setIsModal }) => {
                     <input type="text" className="input-field heading-field" placeholder="Heading" value={modalInputValue.heading} onChange={FormModalInput} name="heading" />
                     <input type="text" className="input-field body-field" placeholder="Body" value={modalInputValue.body} onChange={FormModalInput} name="body" />
                     <input type="file" className="file-upload" name="image" onChange={FormModalInput} />
+                    <p >Файл загружать до 100 кб</p>
                 </div>
                 <button className="modal-action" onClick={submitFormModal}>Создать пост</button>
             </div>

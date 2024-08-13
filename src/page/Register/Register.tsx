@@ -65,8 +65,9 @@ const Register = () => {
             if(result) {
                 localStorage.setItem('id', result.id)
                 localStorage.setItem('flag', 'true')
-                localStorage.setItem("name", data.name)
-                localStorage.setItem("last_name", data.last_name)
+                localStorage.setItem("name", result.name)
+                localStorage.setItem("last_name", result.last_name)
+                localStorage.setItem("avatar", result.avatar)
                 navigate('/')
             }else {
                 return;
@@ -89,7 +90,7 @@ const Register = () => {
         <input type="password" className="input-field password-field" placeholder="Пароль" name="password" value={inputValueReg.password} onChange={formInputReg} />
         <button className="submit-button" onClick={submitFormReg}>Отправить</button>
 
-        <p>Если у вас есть аккаунт, то перейдите к  <span onClick={()=> setRegAndAuto(prevRegAndAuto => !prevRegAndAuto)}>Авторизации </span>   </p>
+        <p>Если у вас есть аккаунт, то перейдите к  <span style={{cursor: 'pointer'}} onClick={()=> setRegAndAuto(prevRegAndAuto => !prevRegAndAuto)}>Авторизации </span>   </p>
     </div>
     ) :
     <div>
@@ -98,7 +99,7 @@ const Register = () => {
         <input type="password" className="input-field password-field" placeholder="Пароль" name="password" value={inputValueAuto.password} onChange={formInputAuto } />
         <button className="submit-button" onClick={findFormAuto}>Отправить</button>
 
-        <p>Если у вас нет аккаунта, то перейдите к  <span onClick={()=> setRegAndAuto(prevRegAndAuto => !prevRegAndAuto)}>Регистрации</span>   </p>
+        <p>Если у вас нет аккаунта, то перейдите к  <span style={{cursor: 'pointer'}} onClick={()=> setRegAndAuto(prevRegAndAuto => !prevRegAndAuto)}>Регистрации</span>   </p>
     </div>
     </div>
    }
