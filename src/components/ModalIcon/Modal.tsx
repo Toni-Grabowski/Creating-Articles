@@ -89,7 +89,7 @@ const Modal: React.FC<ModalProps> = ({ isModal, setIsModal }) => {
                 <button className="modal-close" onClick={() => setIsModal(false)}>&times;</button>
                 <div className='main-modal'>
                     <input type="text" className="input-field heading-field" placeholder="Heading" value={modalInputValue.heading} onChange={FormModalInput} name="heading" />
-                    <input type="text" className="input-field body-field" placeholder="Body" value={modalInputValue.body} onChange={FormModalInput} name="body" />
+                    <input className="input-field body-field" placeholder="Body" value={modalInputValue.body} onChange={FormModalInput} name="body" />
                     <input type="file" className="file-upload" name="image" onChange={FormModalInput} />
                     <p >Файл загружать до 100 кб</p>
                 </div>
